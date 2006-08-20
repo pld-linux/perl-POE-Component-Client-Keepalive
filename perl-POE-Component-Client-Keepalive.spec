@@ -1,54 +1,52 @@
 #
 # Conditional build:
-%bcond_without	autodeps	# don't BR packages needed only for resolving deps
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	POE
 %define		pnam	Component-Client-Keepalive
-Summary:	perl(POE::Component::Client::Keepalive)
+Summary:	POE::Component::Client::Keepalive - manage connections with keep-alive
+Summary(pl):	POE::Component::Client::Keepalive - zarz±dzanie po³±czeniami keep-alive
 Name:		perl-POE-Component-Client-Keepalive
 Version:	0.0801
 Release:	0.1
-# note if it is "same as perl"
-License:	(enter GPL/LGPL/BSD/BSD-like/Artistic/other license name here)
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-#Patch0:		%{name}
-# most of CPAN modules have generic URL (substitute pdir and pnam here)
-#URL:		http://search.cpan.org/dist/%{pdir}-%{pnam}
+# Source0-md5:	79ea0242da708c7a8e190c00efdfccaf
+URL:		http://search.cpan.org/dist/POE-Component-Client-Keepalive/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-#BuildRequires:	-
-%if %{with autodeps} || %{with tests}
-#BuildRequires:	perl-
-#BuildRequires:	perl-
+%if %{with tests}
+BuildRequires:	perl-POE >= 0.31
+BuildRequires:	perl-POE-Component-Client-DNS >= 0.9801
 %endif
-#Requires:	-
-#Provides:	-
-#Obsoletes:	-
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-#%define		_noautoreq	'perl(anything_fake_or_conditional)'
-
 %description
-#
-#%description -l pl
+POE::Component::Client::Keepalive creates and manages connections for
+other components. It maintains a cache of kept-alive connections for
+quick reuse. It is written specifically for clients that can benefit
+from kept-alive connections, such as HTTP clients. Using it for
+one-shot connections would probably be silly.
+
+%description -l pl
+POE::Component::Client::Keepalive tworzy i zarz±dza po³±czeniami dla
+innych komponentów. Utrzymuje cache po³±czeñ keep-alive do szybkiego
+ponownego u¿ycia. Jest napisany szczególnie dla klientów
+korzystaj±cych z po³±czeñ keep-alive, takich jak klienci HTTP.
+U¿ywanie go do pojedynczych po³±czeñ by³oby prawdopodobnie g³upie.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-#%patch0 -p1
 
 %build
-# Don't use pipes here: they generally don't work. Apply a patch.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
 %{__make}
-# if module isn't noarch, use:
-# %{__make} \
-#	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 
@@ -64,8 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
-# note it's mostly easier to copy unpackaged filelist here, and run adapter over the spec.
-# use macros:
 %{perl_vendorlib}/POE/Component/Client/Keepalive.pm
 %dir %{perl_vendorlib}/POE/Component/Connection
 %{perl_vendorlib}/POE/Component/Connection/Keepalive.pm
