@@ -8,20 +8,21 @@
 Summary:	POE::Component::Client::Keepalive - manage connections with keep-alive
 Summary(pl):	POE::Component::Client::Keepalive - zarz±dzanie po³±czeniami keep-alive
 Name:		perl-POE-Component-Client-Keepalive
-Version:	0.0801
-Release:	0.1
+Version:	0.0901
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	79ea0242da708c7a8e190c00efdfccaf
+# Source0-md5:	fab1ddd3e307b4ce3890a4708cfd04de
 URL:		http://search.cpan.org/dist/POE-Component-Client-Keepalive/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-POE >= 0.31
+BuildRequires:	perl-POE >= 1:0.3100
 BuildRequires:	perl-POE-Component-Client-DNS >= 0.9801
 %endif
+Requires:	perl-POE >= 1:0.3100
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
