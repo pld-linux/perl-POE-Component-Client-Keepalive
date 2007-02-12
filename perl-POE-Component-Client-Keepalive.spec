@@ -6,7 +6,7 @@
 %define		pdir	POE
 %define		pnam	Component-Client-Keepalive
 Summary:	POE::Component::Client::Keepalive - manage connections with keep-alive
-Summary(pl.UTF-8):   POE::Component::Client::Keepalive - zarządzanie połączeniami keep-alive
+Summary(pl.UTF-8):	POE::Component::Client::Keepalive - zarządzanie połączeniami keep-alive
 Name:		perl-POE-Component-Client-Keepalive
 Version:	0.0901
 Release:	1
