@@ -6,7 +6,7 @@
 %define		pdir	POE
 %define		pnam	Component-Client-Keepalive
 Summary:	POE::Component::Client::Keepalive - manage connections with keep-alive
-Summary(pl):	POE::Component::Client::Keepalive - zarz±dzanie po³±czeniami keep-alive
+Summary(pl.UTF-8):   POE::Component::Client::Keepalive - zarzÄ…dzanie poÅ‚Ä…czeniami keep-alive
 Name:		perl-POE-Component-Client-Keepalive
 Version:	0.0901
 Release:	1
@@ -33,12 +33,12 @@ quick reuse. It is written specifically for clients that can benefit
 from kept-alive connections, such as HTTP clients. Using it for
 one-shot connections would probably be silly.
 
-%description -l pl
-POE::Component::Client::Keepalive tworzy i zarz±dza po³±czeniami dla
-innych komponentów. Utrzymuje cache po³±czeñ keep-alive do szybkiego
-ponownego u¿ycia. Jest napisany szczególnie dla klientów
-korzystaj±cych z po³±czeñ keep-alive, takich jak klienci HTTP.
-U¿ywanie go do pojedynczych po³±czeñ by³oby prawdopodobnie g³upie.
+%description -l pl.UTF-8
+POE::Component::Client::Keepalive tworzy i zarzÄ…dza poÅ‚Ä…czeniami dla
+innych komponentÃ³w. Utrzymuje cache poÅ‚Ä…czeÅ„ keep-alive do szybkiego
+ponownego uÅ¼ycia. Jest napisany szczegÃ³lnie dla klientÃ³w
+korzystajÄ…cych z poÅ‚Ä…czeÅ„ keep-alive, takich jak klienci HTTP.
+UÅ¼ywanie go do pojedynczych poÅ‚Ä…czeÅ„ byÅ‚oby prawdopodobnie gÅ‚upie.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
