@@ -10,10 +10,11 @@ Summary(pl.UTF-8):	POE::Component::Client::Keepalive - zarządzanie połączenia
 Name:		perl-POE-Component-Client-Keepalive
 Version:	0.21
 Release:	1
+Epoch:		1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/POE/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	ac6b144e05c54ecf46798094a4bd517e
 URL:		http://search.cpan.org/dist/POE-Component-Client-Keepalive/
 BuildRequires:	perl-devel >= 1:5.8.0
